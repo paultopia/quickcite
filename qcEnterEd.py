@@ -16,6 +16,8 @@
 
 # AS YET UNTESTED.  WORK IN PROGRESS.
 
+
+
 import workflow
 import editor
 import re
@@ -91,5 +93,9 @@ if reftype == 'chapter':
     booktitleline = re.search(editedBookTitleMatch, thefile)
     booktitle = booktitleline.group(1)
     reference = {'Type': reftype, 'Authors': authors, 'Title': title, 'Year': year, 'Editors': editor, 'Book-title': booktitle, 'Pages': pages, 'Publisher': publisher, 'City': city}
+
+
+# SEND TO JSON:
+
 refline = json.dumps(reference)
 workflow.set_output(refline)
